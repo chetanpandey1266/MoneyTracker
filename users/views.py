@@ -9,15 +9,15 @@ from friend.models import FriendList
 from django.contrib.auth.models import User
 
 class UserDetailAPI(APIView):
-    # def get(self, request):
-    #     all_users = User.objects.all()
-    #     serializer = UserDetailSerializer(all_users, many=True)
-    #     return Response(serializer.data)
-    
-    def get(self, request, id):
-        user = User.objects.get(id=id)
-        serializer = UserDetailSerializer(user)
+    def get(self, request):
+        all_users = User.objects.all()
+        serializer = UserDetailSerializer(all_users, many=True)
         return Response(serializer.data)
+    
+    # def get(self, request, id):
+    #     user = User.objects.get(id=id)
+    #     serializer = UserDetailSerializer(user)
+    #     return Response(serializer.data)
 
 class LoginAPI(APIView):
     authentication_classes = (TokenAuthentication,)
