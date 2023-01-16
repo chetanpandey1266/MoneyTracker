@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Navbar */
+
+.Navbar {
+  background-color: rgb(66, 187, 147);
+  height: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Navbar_logo {
+  text-decoration: none;
+  color: black;
+}
+.Navbar_logo span {
+  color: white;
+}
+
+.Navbar_logo, .Navbar_side {
+  margin: 1.5rem 4rem;
+}
+
+.Navbar_side {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.signin, .signup {
+  cursor: pointer;
+  margin: 0 0.5rem;
+  text-align: center;
+  padding: 0 20px;
+  padding-top: 10px;
+  background-color: aqua;
+  height: 2rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+/* Signup */
+.Signup, .Signin {
+  display: table;
+  margin: 0 auto;
+}
+
+.Sign_form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Sign_container {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 3rem;
+}
+
+.Sign_logo h1{
+  font-size: 5rem;
+  color: #04AA6D;
+}
+
+.Sign_logo span {
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.Sign_btns button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+/* Dashboard */
+
+.Dashboard_Navbar {
+  background-color: rgb(66, 187, 147);
+  height: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Dashboard_Navbar h1 {
+  margin: auto 2rem;
+}
+.Dashboard_Navbar h1 span {
+  color: #f1f1f1;
+}
+
+.Dashboard_Navbar_profile {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  background-color: #ddd;
+  margin: auto 5rem;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.Dashboard_Navbar_profile i{
+  margin: 0 auto;
+  font-size: 40px;
+}
+
+.Dashboard_Main {
+  display: flex;
+  flex-direction: row;
+}
+
+.Dashboard_Sidebar {
+  background-color: #63e4b5;
+  position: absolute;
+  top: 5rem;
+  bottom: 0;
+  width: 15rem;
+  /* padding: 2rem;   */
+}
+
+.Dashboard_Sidebar div {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  cursor: pointer;
+}
+.Dashboard_Sidebar div:hover {
+  cursor: pointer;
+  background-color: #29d395;
+}
+
+
+.Dashboard_Sidebar div p, 
+.Dashboard_Sidebar div i{
+  font-size: 1.2rem;
+  padding: 0 5px;
+}
+
+.Dashboard_Display {
+  margin-left: 15rem;
+}
+
+/* Summary */
+.Summary {
+  position: absolute;
+  top: 5rem;
+  bottom: 0;
+  left: 15rem;
+  right: 0;
+}
+.Summary_Section1, .Summary_Section2 {
+  margin: 5rem;
+  background-color: #74ecc0;
+  padding: 2rem;
+}
+
+.Summary_Section1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
