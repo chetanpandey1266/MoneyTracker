@@ -39,7 +39,7 @@ Start your app
 ```shell
 npm start
 ```
-
+**Note**: *Make sure the frontend is running on `http://localhost:3000/`*
 
 ***Some of the shortcomings of the project and what I hope to improve further***
 
