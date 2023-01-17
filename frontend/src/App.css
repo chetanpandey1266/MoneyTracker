@@ -115,17 +115,22 @@ input[type=text]:focus, input[type=password]:focus {
 
 .Dashboard_Navbar_profile {
   cursor: pointer;
+  width: 8rem;
   height: 3rem;
-  width: 3rem;
   background-color: #ddd;
   margin: auto 5rem;
   text-align: center;
-  border-radius: 50%;
+  border-radius: 20px;
+  border: none;
 }
 
-.Dashboard_Navbar_profile i{
-  margin: 0 auto;
-  font-size: 40px;
+.Dashboard_Navbar_profile p{
+  margin: 10px auto;
+  font-size: 20px;
+}
+
+.Dashboard_Navbar_profile:hover{
+  background-color: rgb(229, 44, 44);
 }
 
 .Dashboard_Main {
@@ -174,8 +179,8 @@ input[type=text]:focus, input[type=password]:focus {
   right: 0;
 }
 .Summary_Section1, .Summary_Section2 {
-  margin: 5rem;
-  background-color: #74ecc0;
+  margin: 3rem;
+  background-color: #04AA6D;
   padding: 2rem;
 }
 
@@ -185,8 +190,103 @@ input[type=text]:focus, input[type=password]:focus {
   justify-content: space-around;
 }
 
+.Summary_Section2 {
+  padding: 3rem 15rem;
+}
+
 .Friends_content1, .Friends_content2 {
   margin: 3rem;
   background-color: #04AA6D;
   padding: 2rem;
+}
+
+.FriendsDetail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.FriendsDetail button {
+  padding: 5px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.addfriendbtn {
+  background-color: #69cba7;
+  color: white;
+  margin: 2rem 3rem;
+  cursor: pointer;
+  width: 10rem;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+
+.dropbtn {
+  background-color: #69cba7;
+  color: white;
+  margin-top: 1rem;
+  width: 30rem;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  width: 30rem;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  max-height: 20vh;
+  overflow: scroll;
+}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.Expense_Section1 {
+  margin-top: 2rem;
+}
+
+.Expense_Section2 {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.addexpensebtn {
+  padding: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+  background-color: #69cba7;
+  color: white;
 }

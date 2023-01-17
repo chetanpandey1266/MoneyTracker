@@ -4,6 +4,8 @@ import Groups from './Dashboard/Groups';
 import Summary from './Dashboard/Summary'
 import { Navigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import {useNavigate} from 'react-router-dom';
+
 
 function Dashboard() {
 	const [opt, setOpt] = useState(0)
@@ -11,6 +13,8 @@ function Dashboard() {
 	const [owesFrom, setOwesFrom] = useState([]) // expense table
 	const [owesTo, setOwesTo] = useState([]) // expense table
 	const [friends, setFriends] = useState({}) // friends table
+	const [allUsers, setAllUsers] = useState([])
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		const token = localStorage.getItem("token").substring(6)
@@ -40,15 +44,31 @@ function Dashboard() {
 				setOwesFrom(res.owes_from)
 				setOwesTo(res.owes_to)
 			}).catch(err => console.log(err))
+
+		fetch("http://127.0.0.1:8000/users/", {
+			method: "GET",
+				headers: {
+				'Content-Type': 'application/json'
+				},
+		})
+			.then((res) => res.json())
+			.then((res) => {
+				setAllUsers(res)
+			})
 	}, [])
 
+	const logout = () => {
+		localStorage.clear()
+		navigate("/signin")
+	}
+
 	return (
-		!authenticated ? <Navigate to="/signin" /> : <div className='Dashboard'>
+		!authenticated ? <Navigate to="/signin/" /> : <div className='Dashboard'>
 			<div className='Dashboard_Navbar'>
 				<h1>Money<span>Tracker</span></h1>
-				<div className='Dashboard_Navbar_profile'>
-					<i class="fa fa-user" aria-hidden="true"></i>
-				</div>
+				<button className='Dashboard_Navbar_profile' onClick={logout}>
+					<p>Logout</p>
+				</button>
 			</div>
 			<div className='Dashboard_Main'>
 				<div className='Dashboard_Sidebar'>
@@ -67,7 +87,7 @@ function Dashboard() {
 				</div>
 				<div className='Dashboard_Display'>
 					{opt === 0 && <Summary owesfrom={owesFrom} owesto={owesTo} friends={friends} />}
-					{opt === 1 && <Friends friends={friends} />}
+					{opt === 1 && <Friends friends={friends} users={allUsers} />}
 					{opt === 2 && <Groups />}
 				</div>
 

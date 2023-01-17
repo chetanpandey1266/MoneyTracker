@@ -27,9 +27,15 @@ class UserFriends(APIView):
     def post(self, request, token):
         user = Token.objects.get(key=token).user
         friends = FriendList.objects.get(user=user)
-        new_friend = User.objects.get(id=request.data.get('id'))
+        new_friend = User.objects.get(email=request.data.get('email'))
         friends.add_friend(new_friend)
-        return Response(status=200)
+        return Response({"message":f"{new_friend} added as friend"}, status=200)
 
+    def delete(self, request, token):
+        user = Token.objects.get(key=token).user
+        friends = FriendList.objects.get(user=user)
+        selected_friend = User.objects.get(email=request.data.get('email'))
+        friends.remove_friend(selected_friend)
+        return Response({"message": f"{selected_friend} has been deleted"}, status=200)
 
 

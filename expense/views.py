@@ -33,7 +33,7 @@ class Expense(APIView):
     def post(self, request):
         data = request.data
         borrower = Token.objects.get(key=data.get('token')).user
-        receiver = User.objects.get(id=data.get('id'))
+        receiver = User.objects.get(email=data.get('email'))
         
         try:
             expense = IndividualExpenseModel.objects.get(borrower=borrower, receiver=receiver)
